@@ -30,8 +30,8 @@
 			press=".onHideShowWalkedPress" /> -->
 
 		<tnt:SideNavigation id="sideNavigation" selectedKey="walked" expanded="true" >
-			<tnt:NavigationList width="100%">
-				<tnt:NavigationListItem visible="true"  text="Home" icon="sap-icon://home" />
+			<tnt:NavigationList items="{/ZI_PROCESSOS}" width="100%">
+				<tnt:NavigationListItem visible="true"  text="{DescInfotipo}" icon="sap-icon://home" />
 			</tnt:NavigationList>
 		</tnt:SideNavigation>
 	</VBox>

@@ -9,6 +9,7 @@ sap.ui.define([
 	"use strict";
 	return Controller.extend("portaldho.controller.portal.controller", {
 		onInit: function () {
+            let oModel = this.getView().getModel();
 			// TODO consumir serviço ODATA 
 		},
 		onEdit: function () {
