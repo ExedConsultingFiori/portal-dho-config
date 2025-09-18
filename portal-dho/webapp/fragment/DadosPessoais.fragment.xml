@@ -8,44 +8,45 @@
                         xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 
     <smartForm:SmartForm id="smartformImportance"
-                            editTogglable="true" title="{Name}" editable="true"
-                            validationMode="Async"
-                            editToggled="handleEditToggled">
+                        editTogglable="true" title="Dados Pessoais" editable="true"
+                        validationMode="Async"
+                        editToggled="handleEditToggled">
         <smartForm:layout>
             <smartForm:ColumnLayout columnsM="2" columnsL="3" columnsXL="4"/>
         </smartForm:layout>
         <smartForm:Group title="SmartFields with High importance">
             <smartForm:GroupElement>
-                <smartField:SmartField value="{ProductId}" importance="High" />
+                <smartField:SmartField textLabel="Nome" value="Ranier Dalton do Couto"  />
             </smartForm:GroupElement>
             <smartForm:GroupElement>
-                <smartField:SmartField value="{SupplierName}" />
+                <smartField:SmartField value="{usuarioLogado>/Nome}" />
             </smartForm:GroupElement>
             <smartForm:GroupElement>
-                <smartField:SmartField value="{Category}" importance="High" visible="false"/>
+                <smartField:SmartField value="{usuarioLogado>/Nome}" />
             </smartForm:GroupElement>
         </smartForm:Group>
         <smartForm:Group  title="SmartFields with Medium importance">
             <smartForm:GroupElement>
-                <smartField:SmartField value="{Name}" importance="Medium"/>
+                <smartField:SmartField value="{usuarioLogado>/Nome}" />
             </smartForm:GroupElement>
             <smartForm:GroupElement>
-                <smartField:SmartField value="{Status}" />
+                <smartField:SmartField value="{usuarioLogado>/Nome}" />
             </smartForm:GroupElement>
             <smartForm:GroupElement>
-                <smartField:SmartField value="{Price}" />
+                <smartField:SmartField value="{usuarioLogado>/Nome}" />
             </smartForm:GroupElement>
         </smartForm:Group>
         <smartForm:Group  title="SmartFields with Low importance">
             <smartForm:GroupElement>
-                <smartField:SmartField value="{Description}" importance="Low"/>
+                <smartField:SmartField value="{usuarioLogado>/Nome}" />
             </smartForm:GroupElement>
             <smartForm:GroupElement>
-                <smartField:SmartField value="{Quantity}" />
+                <smartField:SmartField value="{usuarioLogado>/Nome}" />
             </smartForm:GroupElement>
             <smartForm:GroupElement>
-                <smartField:SmartField value="{ProductPicUrl}" />
+                <smartField:SmartField value="{usuarioLogado>/Nome}" />
             </smartForm:GroupElement>
         </smartForm:Group>
     </smartForm:SmartForm>
+    
 </core:FragmentDefinition>

@@ -1,4 +1,4 @@
-<mvc:View controllerName="portaldho.controller.portal"
+<mvc:View controllerName="portaldho.controller.Processos"
             xmlns="sap.m"
             xmlns:core="sap.ui.core"
             xmlns:tnt="sap.tnt"
@@ -12,21 +12,21 @@
         </HBox>
         <tnt:SideNavigation id="sideNavigation" selectedKey="walked" expanded="true">
             <tnt:NavigationList>
-                <tnt:NavigationListItem visible="true"  text="Dados Pessoais" icon="sap-icon://home" />
-                <tnt:NavigationListItem visible="true"  text="Dependentes" icon="sap-icon://family-protection" />
-                <tnt:NavigationListItem visible="true"  text="Documentos" icon="sap-icon://documents" />
-                <tnt:NavigationListItem visible="true"  text="Endereço" icon="sap-icon://map" />
-                <tnt:NavigationListItem visible="true"  text="Formacao Pessoal" icon="sap-icon://study-leave" />
-                <tnt:NavigationListItem visible="true"  text="Declarações" icon="sap-icon://newspaper" />
-                <tnt:NavigationListItem text="Férias" press=".itemPress" icon="sap-icon://general-leave-request" >
-                    <tnt:NavigationListItem press=".itemPress" text="Solicitação" />
-                    <tnt:NavigationListItem press=".itemPress" text="Aprovacão" />
+                <tnt:NavigationListItem visible="true" text="Meus Dados" icon="sap-icon://account" />
+                <tnt:NavigationListItem visible="true" text="Dependentes" icon="sap-icon://family-protection" />
+                <tnt:NavigationListItem visible="true" text="Documentos" icon="sap-icon://documents" />
+                <tnt:NavigationListItem visible="true" text="Endereço" icon="sap-icon://map" />
+                <tnt:NavigationListItem visible="true" text="Formacao Pessoal" icon="sap-icon://study-leave" />
+                <tnt:NavigationListItem visible="true" text="Declarações" icon="sap-icon://newspaper" />
+                <tnt:NavigationListItem visible="true" text="Férias" icon="sap-icon://general-leave-request" >
+                    <tnt:NavigationListItem text="Solicitação" />
+                    <tnt:NavigationListItem text="Aprovacão" />
                 </tnt:NavigationListItem>
                 <!-- <tnt:NavigationListItem visible="true"  text="Solicitação de Férias" icon="sap-icon://create-leave-request" /> -->
-                <tnt:NavigationListItem visible="true"  text="Solicitação de Recesso Escolar" icon="sap-icon://learning-assistant" />
+                <tnt:NavigationListItem visible="true" text="Solicitação de Recesso Escolar" icon="sap-icon://learning-assistant" />
                 <!-- <tnt:NavigationListItem visible="true"  text="Aprovacão de Férias" icon="sap-icon://general-leave-request" /> -->
-                <tnt:NavigationListItem visible="true"  text="Recibos" icon="sap-icon://receipt" />
-                <tnt:NavigationListItem visible="true"  text="Beneficios" icon="sap-icon://leads" />
+                <tnt:NavigationListItem visible="true" text="Recibos" icon="sap-icon://receipt" />
+                <tnt:NavigationListItem visible="true" text="Beneficios" icon="sap-icon://leads" />
             </tnt:NavigationList>
         </tnt:SideNavigation>
     </VBox>
