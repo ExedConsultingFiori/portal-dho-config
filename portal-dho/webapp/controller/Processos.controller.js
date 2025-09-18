@@ -12,17 +12,20 @@ sap.ui.define([
 	"use strict";
 	return Controller.extend("portaldho.controller.Processos.controller", {
 
-		onInit: () => {
-            let numeroPessoalUsuarioLogado = "00000001";
+		onInit: function () {
+            let idInfoTipo = "0001";
+            let werks = "1001";
+            let bukrs = "1001";
+
             let oView = this.getView();
             let oModelUsuarioLogado = new JSONModel(); // Instância vazia do objeto que irá receber os dados do usuário
             let oModelRequisicao = this.getOwnerComponent().getModel();
 
             // Método read
-            oModelRequisicao.read(`/ZI_PROCESSOSSet(NumPessoal='${numeroPessoalUsuarioLogado}')`, {
+            oModelRequisicao.read(`/ZI_PROCESSOSSet(IdInfotipo='${idInfoTipo}',Werks='${werks}',Bukrs='${bukrs}')`, {
                 success: (oData, response) => {
                     oModelUsuarioLogado.setData(response.data);
-                    oView.setModel(oModelUsuarioLogado, "usuarioLogado");
+                    oView.setModel(oModelUsuarioLogado, "processosUsuario");
                 },
                 error: (oError) => {
                     console.error("Erro ao obter os dados:", oError);
