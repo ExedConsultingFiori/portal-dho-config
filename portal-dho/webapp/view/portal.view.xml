@@ -2,37 +2,35 @@
         xmlns:mvc="sap.ui.core.mvc"
 	    xmlns="sap.m"
         xmlns:tnt="sap.tnt"
+        xmlns:core="sap.ui.core"
+        xmlns:layout="sap.ui.layout"
 	    height="100%">
     
+    <Page title="{i18n>title}" showNavButton="true" >
        	<ObjectHeader
                     icon="test-resources/sap/m/images/Woman_04.png"
                     iconDensityAware="false"
                     iconAlt="Denise Smith"
                     imageShape="Circle"
                     responsive="true"
-                    title="Denise Smith"
+                    title="{usuarioLogado>/Nome}"
                     intro="Senior Developer"
                     class="sapUiResponsivePadding--header" >
              <!-- TODO atribuir dados consumo serviço -->
 			<ObjectAttribute title="Email address" text="DeniseSmith@sap.com" active="true" />
 			<ObjectAttribute title="Office Phone" text="+33 6 453 564" />
 			<ObjectAttribute title="Functional Area" text="Development" />
-	</ObjectHeader>
+	    </ObjectHeader>
 
-    <VBox renderType="Bare" alignItems="Start" height="100%">
-		<!-- <Button
-			text="Toggle Collapse/Expand"
-			icon="sap-icon://menu2"
-			press=".onCollapseExpandPress" />
-		<Button
-			text="Show/Hide &quot;Walked&quot;"
-			icon="sap-icon://menu2"
-			press=".onHideShowWalkedPress" /> -->
+        <!-- items="{/ZI_PROCESSOS}" -->
+        <!-- <tnt:NavigationListItem visible="{ IsVisible }"  text="{ DescInfotipo }" icon="{ CaminhoIcone }" /> -->
 
-		<tnt:SideNavigation id="sideNavigation" selectedKey="walked" expanded="true" >
-			<tnt:NavigationList items="{/ZI_PROCESSOS}" width="100%">
-				<tnt:NavigationListItem visible="true"  text="{DescInfotipo}" icon="sap-icon://home" />
-			</tnt:NavigationList>
-		</tnt:SideNavigation>
-	</VBox>
+        <FlexBox
+				alignItems="Center"
+				justifyContent="SpaceBetween" >
+            
+            <mvc:XMLView viewName="portaldho.view.NavBar" />
+            <!-- <core:Fragment fragmentName="portaldho.fragment.DadosPessoais" type="XML" /> -->
+        </FlexBox>
+    </Page>
 </mvc:View>

@@ -4,63 +4,48 @@ sap.ui.define([
 	"sap/m/Button",
 	"sap/m/Dialog",
 	"sap/m/MessageToast",
-	"sap/m/Text"
+	"sap/m/Text",
+    'sap/m/MessageBox',
+	'sap/ui/core/util/MockServer',
+	'sap/ui/model/json/JSONModel',
+	'sap/ui/model/odata/v2/ODataModel'
 ], function (JSONModel, Controller, Button, Dialog, MessageToast, Text) {
 	"use strict";
 	return Controller.extend("portaldho.controller.portal.controller", {
+
+        // Funções Relacionadas ao Conteúdo do Usuário Logado
 		onInit: function () {
-            let oModel = this.getView().getModel();
-			// TODO consumir serviço ODATA 
+            let numeroPessoalUsuarioLogado = "00000001";
+            let oView = this.getView();
+            let oModelUsuarioLogado = new JSONModel(); // Instância vazia do objeto que irá receber os dados do usuário
+            let oModelRequisicao = this.getOwnerComponent().getModel();
+
+            // Método read
+            oModelRequisicao.read(`/ZI_DADOS_PESSOAISSet(NumPessoal='${numeroPessoalUsuarioLogado}')`, {
+                success: (oData, response) => {
+                    oModelUsuarioLogado.setData(response.data);
+                    oView.setModel(oModelUsuarioLogado, "usuarioLogado");
+                },
+                error: (oError) => {
+                    console.error("Erro ao obter os dados:", oError);
+                }
+            });
+			
 		},
-		onEdit: function () {
-			this.bEditMode = !this.bEditMode;
-			var sEditMode =  this.bEditMode ? "enabled" : "disabled";
-			MessageToast.show("Edit mode " + sEditMode);
+		handleEditToggled: function (oEvent) {
+			// just dummy function to activate input validation in SmartForm.
 		},
-		onBeforeNavigate: function (oEvent) {
-			if (!this.bEditMode) {
-				return;
-			}
 
-			var oSection = oEvent.getParameter("section");
+        // Funções Relacionadas ao Side Menu
+        onCollapseExpandPress() {
+			const oSideNavigation = this.byId("sideNavigation"),
+			bExpanded = oSideNavigation.getExpanded();
 
-			oEvent.preventDefault();
-
-			if (!this.oDialog) {
-				this.oDialog = new Dialog({
-					title: "Unsaved changes",
-					content: new Text({
-						text: "You are in 'Edit' mode. Are you sure you want to navigate to other section?"
-					}),
-					beginButton: new Button({
-						text: "OK",
-						press: function () {
-							this.oDialog.close();
-							this.oPreviousSelectedSection = this.oSelectedSection;
-							this.oOPL.setSelectedSection(this.oSelectedSection);
-						}.bind(this)
-					}),
-					endButton: new Button({
-						text: "Cancel",
-						press: function () {
-							this.oDialog.close();
-							this.oSelectedSection = this.oPreviousSelectedSection;
-						}.bind(this)
-					})
-				});
-
-				this.getView().addDependent(this.oDialog);
-				this.oDialog.attachAfterClose(function () {
-					this.oSelectedSection.getDomRef().focus();
-				}.bind(this));
-			}
-
-			if (this.oSelectedSection !== oSection) {
-				this.oDialog.open();
-				this.oPreviousSelectedSection = this.oSelectedSection;
-			}
-
-			this.oSelectedSection = oSection;
-		}
+			oSideNavigation.setExpanded(!bExpanded);
+		},
+		handleEditToggled: function (oEvent) {
+			// just dummy function to activate input validation in SmartForm.
+		},
+        
 	});
 });
