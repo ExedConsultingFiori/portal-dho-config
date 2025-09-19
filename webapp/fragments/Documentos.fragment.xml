@@ -1,0 +1,22 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:mvc="sap.ui.core.mvc" >
+
+    <Page id="documentosPage" title="Meus Documentos" showHeader="true">
+        <content>
+            <form:SimpleForm layout="ResponsiveGridLayout">
+                <Label text="CPF" />
+                <Text text="123.456.789-00" />
+                <Label text="RG" />
+                <Text text="98.765.432-1" />
+                <Label text="Título de Eleitor" />
+                <Text text="1234 5678 9012" />
+                <Label text="Carteira de Trabalho" />
+                <Text text="1234567 SP" />
+            </form:SimpleForm>
+        </content>
+    </Page>
+
+</core:FragmentDefinition>

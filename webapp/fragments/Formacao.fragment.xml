@@ -1,0 +1,38 @@
+
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:mvc="sap.ui.core.mvc" >
+    
+    <Page id="formacaoPage" title="Minha Formação" showHeader="true">
+        <content>
+            <Table id="formacaoTable">
+                <columns>
+                    <Column width="30%"><Text text="Grau de Instrução" /></Column>
+                    <Column width="40%"><Text text="Curso" /></Column>
+                    <Column width="30%"><Text text="Instituição" /></Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="Superior" />
+                            <Text text="Ciência da Computação" />
+                            <Text text="Universidade Federal do Rio de Janeiro" />
+                        </cells>
+                    </ColumnListItem>
+                    <ColumnListItem>
+                        <cells>
+                            <Text text="Pós-graduação" />
+                            <Text text="Engenharia de Software" />
+                            <Text text="Escola Politécnica da USP" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+
+</core:FragmentDefinition>
+
+

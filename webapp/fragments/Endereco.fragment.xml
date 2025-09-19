@@ -1,0 +1,28 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:mvc="sap.ui.core.mvc" >
+    
+    <Page id="enderecoPage" title="Meu Endereço" showHeader="true">
+        <content>
+            <form:SimpleForm layout="ResponsiveGridLayout">
+                <Label text="CEP" />
+                <Text text="05110-000" />
+                <Label text="Logradouro" />
+                <Text text="Avenida Largo do José" />
+                <Label text="Número" />
+                <Text text="1234" />
+                <Label text="Complemento" />
+                <Text text="NA" />
+                <Label text="Bairro" />
+                <Text text="Pirituba" />
+                <Label text="Cidade" />
+                <Text text="São Paulo" />
+                <Label text="Estado" />
+                <Text text="SP" />
+            </form:SimpleForm>
+        </content>
+    </Page>
+
+</core:FragmentDefinition>

@@ -1,0 +1,68 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns:f="sap.f"
+	xmlns:layout="sap.ui.layout">
+    
+    <f:DynamicPage id="dynamicPageId" headerExpanded="true" toggleHeaderOnTitleClick="true">
+        <!-- DynamicPage Title -->
+        <f:title>
+            <f:DynamicPageTitle>
+                <f:heading>
+                    <Title text="Configurações de Perfil"/>
+                </f:heading>
+                <f:expandedContent>
+                    <Label text="Realize as suas configurações de preferências da plataforma!"/>
+                </f:expandedContent>
+                <f:snappedContent>
+                    <Label text="Realize as suas configurações de preferências da plataforma!"/>
+                </f:snappedContent>
+                <f:snappedTitleOnMobile>
+                    <Title text="Realize as suas configurações de preferências da plataforma!"/>
+                </f:snappedTitleOnMobile>
+                
+                <f:actions>
+                    <Button
+                            text="Edit"
+                            type="Emphasized"
+                            press="toggleAreaPriority"/>
+                    <Button
+                            text="Delete"
+                            type="Transparent"/>
+                </f:actions>
+            </f:DynamicPageTitle>
+        </f:title>
+
+        <!-- DynamicPage Header -->
+        <f:header>
+            <f:DynamicPageHeader pinnable="true">
+                <layout:HorizontalLayout allowWrapping="true">
+                    <layout:VerticalLayout class="sapUiMediumMarginEnd">
+                        <ObjectAttribute title="Location" text="Warehouse A"/>
+                        <ObjectAttribute title="Halway" text="23L"/>
+                        <ObjectAttribute title="Rack" text="34"/>
+                    </layout:VerticalLayout>
+
+                    <layout:VerticalLayout>
+                        <ObjectAttribute title="Availability"/>
+                        <ObjectStatus text="In Stock" state="Success" />
+                    </layout:VerticalLayout>
+                </layout:HorizontalLayout>
+            </f:DynamicPageHeader>
+        </f:header>
+        <f:content>
+            
+        </f:content>
+        <!-- DynamicPage Footer -->
+        <f:footer>
+            <OverflowToolbar>
+                <ToolbarSpacer/>
+                <Button type="Accept" text="Accept"/>
+                <Button type="Reject" text="Reject"/>
+            </OverflowToolbar>
+        </f:footer>
+    </f:DynamicPage>
+
+</core:FragmentDefinition>

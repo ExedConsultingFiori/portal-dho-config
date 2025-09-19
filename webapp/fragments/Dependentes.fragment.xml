@@ -1,0 +1,36 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:mvc="sap.ui.core.mvc" >
+
+    <Page id="dependentesPage" title="Meus Dependentes" showHeader="true">
+        <content>
+            <List id="dependentesList">
+                <items>
+                    <CustomListItem>
+                        <form:SimpleForm layout="ResponsiveGridLayout" columnsL="2" columnsM="2" columnsXL="-1">
+                            <Label text="Nome" />
+                            <Text text="Pedro Santos Silva" />
+                            <Label text="Grau de Parentesco" />
+                            <Text text="Filho" />
+                            <Label text="Data de Nascimento" />
+                            <Text text="10/05/2018" />
+                        </form:SimpleForm>
+                    </CustomListItem>
+                    <CustomListItem>
+                        <form:SimpleForm layout="ResponsiveGridLayout" columnsL="2" columnsM="2" columnsXL="1">
+                            <Label text="Nome" />
+                            <Text text="Isabela Santos Silva" />
+                            <Label text="Grau de Parentesco" />
+                            <Text text="Filha" />
+                            <Label text="Data de Nascimento" />
+                            <Text text="22/11/2020" />
+                        </form:SimpleForm>
+                    </CustomListItem>
+                </items>
+            </List>
+        </content>
+    </Page>
+
+</core:FragmentDefinition>
